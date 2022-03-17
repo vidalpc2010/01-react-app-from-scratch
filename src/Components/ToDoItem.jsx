@@ -1,6 +1,10 @@
 import React from 'react';
 
-export function ToDoItem({todo ,toggleTodo}){
+
+// La palabra reservada "default" la usamos para al momento de importar no necesitemos llaves {} para llamar a la funcion exportada
+// lo cual permite importar cambiando el nombre "ToDoItem" por cualquier otra nombre sin perder la referencia de que la funcion importada es la que
+// fue marcada como default
+export default function ToDoItem({todo ,toggleTodo}){
 
     const {id, task, completed} = todo;
 
@@ -15,3 +19,4 @@ export function ToDoItem({todo ,toggleTodo}){
         </li>
     )
 }
+

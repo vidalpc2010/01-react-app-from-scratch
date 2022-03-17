@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useRef, useEffect } from "react";
-import { ToDoList } from "./Components/ToDoList";
+import { ToDoList , numItems } from "./Components/ToDoList";
 import { v4 as uuidV4 } from "uuid";
 
 const KEY = "todoApp.todos";
@@ -9,8 +9,8 @@ export function App() {
     { id: 1, task: "tarea 1", completed: true },
   ]);
 
-// let is used to define a variable 
-//   this is a constant variable
+  // let is used to define a variable
+  //   this is a constant variable
   const todoTaskRef = useRef();
 
   useEffect(() => {
@@ -24,11 +24,8 @@ export function App() {
     localStorage.setItem(KEY, JSON.stringify(todos));
   }, [todos]);
 
-
-
-
-// the arrow funtions resolve the promes for "This" context
-//   This is an Arrow fucntion ES6
+  // the arrow funtions resolve the promes for "This" context
+  //   This is an Arrow fucntion ES6
   const toggleTodo = (id) => {
     const newTodos = [...todos];
     const todo = newTodos.find((todo) => todo.id === id);
@@ -64,6 +61,8 @@ export function App() {
         te quedan {todos.filter((todo) => !todo.completed).length} tareas por
         terminar
       </div>
+
+      <div>Total of imported items : {numItems}</div>
     </Fragment>
   );
 }
