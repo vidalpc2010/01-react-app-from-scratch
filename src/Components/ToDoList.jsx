@@ -16,3 +16,5 @@ export function ToDoList({todos , toggleTodo}){
 // con la que fue creada haciendo uso de {}
 export const numItems = 543234234;
 
+export const numTwo = 4532322;
+
