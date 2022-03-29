@@ -1,11 +1,36 @@
 import React, { Fragment, useState, useRef, useEffect } from "react";
-import { ToDoList , numItems as totalItemsAlias } from "./Components/ToDoList";
+import { ToDoList, numItems as totalItemsAlias } from "./Components/ToDoList";
 import { v4 as uuidV4 } from "uuid";
-import * as allToDo from './Components/ToDoList';
+import * as allToDo from "./Components/ToDoList";
+import Expenses from "./Components/Expenses/Expenses";
+import NewExpense from "./Components/Expenses/NewExpense/NewExpense";
 
 const KEY = "todoApp.todos";
 
-export function App() {
+// IMPERATIVE AND DECLARATIVE
+
+const App = () => {
+  const expenses = [
+    {
+      id: "e1",
+      title: "Car Insurance",
+      amount: 435.23,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: "e2",
+      title: "Car Insurance2",
+      amount: 2115.23,
+      date: new Date(2021, 4, 3),
+    },
+    {
+      id: "e3",
+      title: "Car Insurance3",
+      amount: 777.23,
+      date: new Date(2021, 1, 4),
+    },
+  ];
+
   const [todos, setTodos] = useState([
     { id: 1, task: "tarea 1", completed: true },
   ]);
@@ -28,7 +53,6 @@ export function App() {
   // the arrow funtions resolve the promes for "This" context
   //   This is an Arrow fucntion ES6
   const toggleTodo = (id) => {
-
     // Spred operator ... copy all the elements in an old array
     // Spred operator works at same for Objects and for Arrays
     const newTodos = [...todos];
@@ -36,10 +60,6 @@ export function App() {
     todo.completed = !todo.completed;
     setTodos(newTodos);
   };
-
-
-
-  
 
   // Array functions , in the follow example is returned a real new array after multiplicate each number of the old array by 2
   //   map()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
@@ -50,7 +70,7 @@ export function App() {
   // concat()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat?v=b
   // slice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
   // splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
-  const numbers = [ 1 , 2 , 3];
+  const numbers = [1, 2, 3];
   const doubleNumbers = numbers.map((num) => num * 2);
   console.log(numbers);
   console.log(doubleNumbers);
@@ -72,6 +92,10 @@ export function App() {
     setTodos(newTodos);
   };
 
+  const addExpenseHandler = (expense) => {
+
+  };
+
   return (
     <Fragment>
       <ToDoList todos={todos} toggleTodo={toggleTodo} />
@@ -86,6 +110,12 @@ export function App() {
 
       <div>Total of imported items : {totalItemsAlias}</div>
       <div>Variable imported with * option : {allToDo.numTwo}</div>
+
+      <NewExpense onAddExpense={addExpenseHandler} />
+      
+      <Expenses items={expenses} />
     </Fragment>
   );
 }
+
+export default App;
