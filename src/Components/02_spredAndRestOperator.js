@@ -2,7 +2,7 @@
 // Spread operator example in an Array
 const numbers = [1,2,3];
 const newNumbers = [...numbers,4];
-console.log(newNumbers);
+
 
 
 // Spread operator example in an object

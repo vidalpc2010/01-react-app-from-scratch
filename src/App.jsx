@@ -7,29 +7,36 @@ import NewExpense from "./Components/Expenses/NewExpense/NewExpense";
 
 const KEY = "todoApp.todos";
 
+const dummyExpenses = [
+  {
+    id: "e1",
+    title: "Car Insurance",
+    amount: 435.23,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: "e2",
+    title: "Car Insurance2",
+    amount: 2115.23,
+    date: new Date(2021, 4, 3),
+  },
+  {
+    id: "e3",
+    title: "Car Insurance3",
+    amount: 777.23,
+    date: new Date(2021, 1, 4),
+  },
+];
+
+///////////////////////////////////
 // IMPERATIVE AND DECLARATIVE
+// CONTROLED COMPONENT
+// STATE LESS  COMPONENTES SIN ESTADO
+// STATE FULL  COMPONENTES CON ESTADO
+////////////////////////////////////////7
 
 const App = () => {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Car Insurance",
-      amount: 435.23,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e2",
-      title: "Car Insurance2",
-      amount: 2115.23,
-      date: new Date(2021, 4, 3),
-    },
-    {
-      id: "e3",
-      title: "Car Insurance3",
-      amount: 777.23,
-      date: new Date(2021, 1, 4),
-    },
-  ];
+  const [expenses, setExpenses] = useState(dummyExpenses);
 
   const [todos, setTodos] = useState([
     { id: 1, task: "tarea 1", completed: true },
@@ -72,8 +79,7 @@ const App = () => {
   // splice()  => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
   const numbers = [1, 2, 3];
   const doubleNumbers = numbers.map((num) => num * 2);
-  console.log(numbers);
-  console.log(doubleNumbers);
+
 
   const handleToAdd = () => {
     const task = todoTaskRef.current.value;
@@ -93,7 +99,9 @@ const App = () => {
   };
 
   const addExpenseHandler = (expense) => {
-
+    setExpenses(prevExpenses => {
+      return [...prevExpenses,expense];
+    });
   };
 
   return (
@@ -112,10 +120,10 @@ const App = () => {
       <div>Variable imported with * option : {allToDo.numTwo}</div>
 
       <NewExpense onAddExpense={addExpenseHandler} />
-      
-      <Expenses items={expenses} />
+
+      <Expenses  items={expenses} />
     </Fragment>
   );
-}
+};
 
 export default App;
