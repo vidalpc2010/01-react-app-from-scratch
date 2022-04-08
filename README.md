@@ -2,6 +2,71 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Topics
+
+### Section 2: JavaScript Refresher
+12. Understanding "let" and "const"
+13. Arrow Functions
+14. Exports and Imports
+15. Understanding Classes
+16. Classes, Properties and Methods
+17. The Spread & Rest Operator
+18. Destructuring
+19. Reference and primitive types
+20. Refreshing Array Functions
+21. Wrap up
+
+### Section 3: React Basics & Working With Components
+25. What Are Components? And Why Is React All About Them?
+26. React Code Is Written In A "Declarative Way"!
+32. How React Works
+33. Building a First Custom Component
+35. Adding Basic CSS Styling
+36. Outputting Dynamic Data & Working with Expressions in JSX
+37. Passing Data via "props"
+38. Adding "normal" JavaScript Logic to Components
+39. Splitting Components Into Multiple Components
+40. The Concept of "Composition" ("children props")
+42. A Closer Look At JSX
+43. Organizing Component Files
+44. An Alternative Function Syntax
+
+### Section 4: React State & Working with Events
+47. Listening to Events & Working with Event Handlers
+48. How Component Functions Are Executed
+49. Working with "State"
+50. A Closer Look at the "useState" Hook
+51. State can be updated in many ways!
+52. Adding Form Inputs
+53. Listening to User Input
+54. Working with Multiple States
+55. Using One State Instead (And What's Better)
+56. Updating State That Depends On The Previous State
+57. Handling Form Submission
+58. Adding Two-Way Binding
+59. Child-to-Parent Component Communication (Bottom-up)
+60. Lifting The State Up
+61. Controlled vs Uncontrolled Components & Stateless vs Stateful Components
+
+### Section 5: Rendering Lists & Conditional Content
+64. Rendering Lists of Data
+65. Using Stateful Lists
+66. Understanding "Keys"
+67. Outputting Conditional Content
+68. Adding Conditional Return Statements
+69. Demo App: Adding a Chart
+70. Adding Dynamic Styles
+
+### Section 6: Styling React Components
+75. Setting Dynamic Inline Styles
+76. Setting CSS Classes Dynamically
+77. Introducing Styled Components
+78. Styled Components & Dynamic Props
+79. Styled Components & Media Queries
+80. Using CSS Modules
+81. Dynamic Styles with CSS Modules
+
+
 ## Available Scripts
 
 In the project directory, you can run:
