@@ -66,6 +66,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 80. Using CSS Modules
 81. Dynamic Styles with CSS Modules
 
+Limitatios
+Wrappers
+Fragments
+Portal
+Ref
+
 
 ## Available Scripts
 
